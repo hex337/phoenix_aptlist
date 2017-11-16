@@ -4,7 +4,7 @@ This solution to the [coding challenge](https://gist.github.com/sarahwiemero/0aa
 
 ## Setup
 
-You need to have docker installed to run this, and probably ngrok if you want to test it in slack.
+You need to have docker installed to run this, and probably [ngrok](https://ngrok.com) if you want to test it in slack.
 
 To get this up and running, follow these commands:
 
@@ -45,7 +45,9 @@ Note that the output is formatted for slack, so it may not look that great in yo
 
 ## Adding to Slack
 
-You will need to add four slack slash commands to your chosen slack application.
+Fire up ngrok, or some other tunneling service to have a public facing url for your local server.
+
+Next, add four slack slash commands to your chosen slack application.
 
 ```
 /ff-add
@@ -55,6 +57,8 @@ You will need to add four slack slash commands to your chosen slack application.
 ```
 
 Connect these to the appropriate endpoints through your ngrok tunnel, and presto.
+
+One example, for the `/ff-add` command, you would set the request url to be `https://yourtunnelurl.com/api/slack-users/create`, with a friendly description and `[email] [name]` as the Usage Hint.
 
 ## Running Tests
 
